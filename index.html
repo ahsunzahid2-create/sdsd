@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center><section>
+    <img src="bill gates.jpg" class="honor" style="height: 300px; width:250px;">
+      <img src="Charles babage.jpg" class="honor" style="height: 300px; width:250px;">
+        <img src="einstien2.jpg" class="honor" style="height: 300px; width:250px;">
+          <img src="robert hoolk.jpg" class="honor" style="height: 300px; width:250px;">
+          <button onclick="coursel()">Punch it</button>
+  
+</section>
+</center>
+
+<script>
+
+let src =0;
+// coursel();
+let isrunning = false
+
+function coursel(){
+   if (isrunning== false){
+    isrunning = true;
+    start();
+   }
+}
+
+
+function start(){
+    let i;
+    let x=document.getElementsByClassName("honor");
+
+    for(i = 0; i<x.length ; i++){
+        x[i].style.display = "none";
+    }
+
+    src++;
+
+    if(src>x.length){
+        src = 1;
+    }
+
+    x[src - 1].style.display ="block";
+    setTimeout(start, 3000)
+}
+
+</script>
+</body>
+</html>
